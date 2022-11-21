@@ -8,11 +8,13 @@ import pyttsx3
 tts = pyttsx3.init()
 
 # 실습용 pdf01.pdf 파일 읽기
-pdfReader = PyPDF2.PdfReader(open("../pdf/pdf01.pdf", "rb"))
+pdfReader = PyPDF2.PdfReader(open("../pdf/novel1.pdf", "rb"))
 
 # PDF 파일의 전체 페이지수
 total_pages = pdfReader.numPages
 print("total_pages : ", total_pages)
+
+text = "소설 읽기를 시작합니다. ";
 
 for page_num in range(total_pages):
     text = pdfReader.getPage(page_num).extractText()
@@ -24,11 +26,11 @@ for page_num in range(total_pages):
     # 문자를 음성으로 다 읽어주기까지 파이썬 실행을 종료하지 않고 기다리기
     tts.runAndWait()
 
-# 문자를 모두 다 읽었으면, 실행종료하기
-tts.stop()
+# # 문자를 모두 다 읽었으면, 실행종료하기
+# tts.stop()
 
 # 읽은 음성을 mp3 파일로 저장하기
-tts.save_to_file("../mp3/myTTS.mp3")
+tts.save_to_file(text, "../mp3/myTTS.mp3")
 
 # mp3 파일 생성이 완료되기까지 파이썬 실행을 종료하지 않고 기다리기
 tts.runAndWait()
