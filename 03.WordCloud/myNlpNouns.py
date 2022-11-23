@@ -19,3 +19,4 @@ print(replace_text)
 
 # 명사만 List 형태의 배열로 출력
 print(myHannanum.nouns(replace_text))
+

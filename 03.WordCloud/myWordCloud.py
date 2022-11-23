@@ -1,4 +1,3 @@
-
 # 앞선 실습에서 진행한 네이버 신문기사로부터 수집한 기사 내용 가져오기
 text = open("../news/mynews.txt", encoding="UTF-8").read()
 
@@ -27,3 +26,4 @@ plt.axis('off')
 
 # 워드 클라우드 보여주기
 plt.show()
+

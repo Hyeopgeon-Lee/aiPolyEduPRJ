@@ -1,5 +1,7 @@
+# 네이버 뉴스로부터 웹크롤링하기 위해 request 활용
 import requests
-import re
+
+# 네이버 뉴스 HTML 소스의 내용을 가져오기 위해 활용
 from bs4 import BeautifulSoup
 
 # 네이버는 정상적인 접근(사용자 직접 네이버 접속)이 아닌 웹 크롤링 등 비정상적인 접근을 방지 하게 위해 HTTP 해더 정보를 요구함
@@ -10,17 +12,15 @@ headers = {
     "User-Agent": "Seoul Gangseo Campus of Korea Polytechnics College, Dept. of Data Analysis / Python Education"}
 
 # 수집할 신문기사 URL
-webpage = requests.get("https://news.naver.com/main/read.naver?mode=LSD&mid=sec&sid1=101&oid=215&aid=0000983912",
-                       headers=headers)
+webpage = requests.get("https://entertain.naver.com/read?oid=009&aid=0004968578", headers=headers)
 
 # URL로부터 읽은 HTML 내용을 파이썬에서 처리할 수 있게 파싱하기
 soup = BeautifulSoup(webpage.content, "html.parser")
 
 # 신문기사 본문 내용을 문자열로 저장하기
-naver_news = soup.select_one("#dic_area").get_text().strip()
-
-# 마침표 다음 문자에 띄어쓰기 없는 경우를 해결하기위해 .뒤에 띄어쓰기되도록 설정
-naver_news = re.sub(r"[.]", ". ", naver_news)
+#naver_news = soup.select_one("#dic_area").get_text().strip()
+naver_news = soup.select_one("#articeBody").get_text().strip()
 
 # 신문기사 출력
 print(naver_news)
+

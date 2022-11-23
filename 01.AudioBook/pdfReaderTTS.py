@@ -12,13 +12,18 @@ pdfReader = PyPDF2.PdfReader(open("../pdf/novel1.pdf", "rb"))
 
 # PDF 파일의 전체 페이지수
 total_pages = pdfReader.numPages
-print("total_pages : ", total_pages)
+print("전체 페이지 수 : ", total_pages)
 
-text = "소설 읽기를 시작합니다. ";
-
+# PDF 전체 페이지수 만큼 반복하기
 for page_num in range(total_pages):
+    # 페이지별 추출된 문자를 text 변수에 저장하기
     text = pdfReader.getPage(page_num).extractText()
+
+    # 저장된 Text 변수를 출력하여 인식된 문자를 보여주기
     print(text)
+
+    # 말하기 속도 조절(기본값 : 200 / 값이 클수록 말속도가 빠르며, 작으면 느림)
+    tts.setProperty("rate", 180)
 
     # 문자를 음성으로 변환하기
     tts.say(text)
@@ -26,11 +31,7 @@ for page_num in range(total_pages):
     # 문자를 음성으로 다 읽어주기까지 파이썬 실행을 종료하지 않고 기다리기
     tts.runAndWait()
 
-# # 문자를 모두 다 읽었으면, 실행종료하기
-# tts.stop()
+# 문자를 모두 다 읽었으면, 실행종료하기
+tts.stop()
 
-# 읽은 음성을 mp3 파일로 저장하기
-tts.save_to_file(text, "../mp3/myTTS.mp3")
 
-# mp3 파일 생성이 완료되기까지 파이썬 실행을 종료하지 않고 기다리기
-tts.runAndWait()

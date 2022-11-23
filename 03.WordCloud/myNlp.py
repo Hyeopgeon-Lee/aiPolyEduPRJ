@@ -9,3 +9,4 @@ text = open("../news/mynews.txt", encoding="UTF-8").read()
 
 # 형태소 분석에 대한 자연어 처리 결과 출력
 print(myHannanum.analyze(text))
+
