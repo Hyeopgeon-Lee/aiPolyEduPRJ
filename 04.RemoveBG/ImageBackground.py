@@ -11,3 +11,4 @@ output = remove(input) # 배경 삭제
 output.save(resultImage) # 배경삭제된 이미지 저장
 
 print("이미지의 배경이 삭제되었습니다.")
+

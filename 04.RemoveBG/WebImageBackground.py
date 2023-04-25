@@ -4,7 +4,7 @@ from io import BytesIO
 import requests
 
 # 인터넷 상에 존재하는 배경을 삭제하고 싶은 이미지 URL 주소
-url = "https://file2.nocutnews.co.kr/newsroom/image/2023/04/07/202304071105133719_0.jpg"
+url = "https://file.mk.co.kr/meet/neds/2022/12/image_readtop_2022_1171782_16723494025295178.jpg"
 
 myImage = requests.get(url)  # url에 접속하여 배경을 삭제하고 싶은 이미지 파일을 가져오기
 
