@@ -4,7 +4,7 @@ import pyttsx3
 # TTS 사용하기 위해 초기화
 tts = pyttsx3.init()
 
-# 2022.03 기준 업데이트된 PyPDF2 v3.0 프로그램 소스
+# 2023.03 기준 업데이트된 PyPDF2 v3.0 프로그램 소스
 from PyPDF2 import PdfReader
 
 reader = PdfReader("../pdf/novel1.pdf")

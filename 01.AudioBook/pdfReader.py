@@ -1,4 +1,4 @@
-# 2022.03 기준 업데이트된 PyPDF2 v3.0 프로그램 소스
+# 2023.03 기준 업데이트된 PyPDF2 v3.0 프로그램 소스
 from PyPDF2 import PdfReader
 
 reader = PdfReader("../pdf/novel1.pdf")
