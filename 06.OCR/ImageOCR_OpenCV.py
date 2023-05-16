@@ -4,7 +4,7 @@ import cv2
 import pytesseract
 
 # 설치한 tesseract 프로그램의 실행파일 위치 설정하기
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r"C:\Tesseract-OCR\tesseract.exe"
 
 # 분석하기 위한 이미지 불러오기
 image = cv2.imread("../image/news01.jpg", cv2.IMREAD_COLOR)

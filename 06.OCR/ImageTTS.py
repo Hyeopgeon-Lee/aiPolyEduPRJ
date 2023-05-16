@@ -8,7 +8,7 @@ import pytesseract
 import pyttsx3
 
 # 설치한 tesseract 프로그램의 실행파일 위치 설정하기
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r"C:\Tesseract-OCR\tesseract.exe"
 
 # tesseract 프로그램에 존재하는 언어별 학습모델 파일 확인하기(기본 제공 학습모델 : eng, osd)
 # 한국어는 기본 설치되지 않기에 tesseract 공식 홈페이지에서 학습모델 다운로드 필요함
