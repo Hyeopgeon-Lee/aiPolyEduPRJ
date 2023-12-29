@@ -11,12 +11,15 @@ chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 # 브라우저 생성
 browser = webdriver.Chrome(options=chrome_options)
+
+# 접속할 주소 => 여기만 수정하세요.
 browser.get(
     'https://www.adiga.kr/PageLinkAll.do?link=/kcue/ast/eip/eis/inf/univinf/eipUinfMainGnrl.do&p_menu_id=PG-EIP-01801&univ_cd=0000063')
 
 # 동적 로딩으로 늦게뜨는 컨텐츠들을 확인하기위해 강제로 5초 쉬기
 time.sleep(5)
 
+# 주소 정보 나오는 곳 => 여기만 수정하세요.
 text = browser.find_element(By.CLASS_NAME, 'd_list_box').text
 
 print(text)
