@@ -5,8 +5,10 @@ import ollama
 print("LLAMA3를 통해 분석을 시작합니다.")
 result = ollama.chat(  # 라마3로부터 생성된 답변을 실시간 받기
     model="llama3",  # 사용 모델
-    messages=[{"role": "user", "content": "2023년 기준으로 K-POP 그룹인 'LE SSERAFIM'과  'ITZY' 중 누가 더 팬들에게 인기 많을까?"},
-              {"role": "user", "content": "한글로 번역해서 알려줘"}],  # 명령어
+    messages=[{"role": "user",
+               "content": "2023년에 K-POP 그룹인 'LE SSERAFIM'과  'ITZY' 중 누가 더 팬들에게 인기 많았을까?"},
+              {"role": "user",
+               "content": "한글로 번역해서 알려줘"}],  # 명령어
 )
 
 print("LLAMA3를 통해 분석이 종료되었습니다.")
