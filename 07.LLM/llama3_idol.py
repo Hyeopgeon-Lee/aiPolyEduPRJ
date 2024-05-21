@@ -11,3 +11,4 @@ stream = ollama.chat(  # 라마3로부터 생성된 답변을 실시간 받기
 
 for chunk in stream:
     print(chunk['message']['content'], end='', flush=True)  # 응답 결과 실시간 출력하기
+

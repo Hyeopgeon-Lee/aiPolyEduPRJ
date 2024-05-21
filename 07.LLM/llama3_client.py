@@ -18,3 +18,4 @@ print("LLAMA3를 통해 분석이 종료되었습니다.")
 
 message = result["message"]["content"]
 print("결과 : ", message)  # 결과 출력하기
+
